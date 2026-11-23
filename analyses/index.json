@@ -12,11 +12,21 @@
       "title": "ТАЙМФРЕЙМЫ: Лучшая Стратегия для СКАЛЬПИНГА",
       "model": "opencode-go/gemini-4-argon",
       "analyzed_at": "2026-11-23"
+    },
+    {
+      "id": "u2MzP4BcKJ4",
+      "title": "Свинг трейдинг",
+      "model": "opencode-go/gemini-4-argon",
+      "analyzed_at": "2026-11-23"
+    },
+    {
+      "id": "Fzme9R_jbiE",
+      "title": "Позиционный трейдинг",
+      "model": "opencode-go/gemini-4-argon",
+      "analyzed_at": "2026-11-23"
     }
   ],
   "in_progress": [
-    "u2MzP4BcKJ4",
-    "Fzme9R_jbiE",
     "E_V5B7jpEcY"
   ]
 }
