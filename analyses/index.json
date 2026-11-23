@@ -1,0 +1,17 @@
+{
+  "dedup_by": "youtube_video_id (strip ?si=...)",
+  "analyzed": [
+    {
+      "id": "k8aylsnYAe8",
+      "title": "ТАЙМФРЕЙМЫ: Лучшая Стратегия для ДЕЙТРЕЙДИНГА",
+      "model": "opencode-go/gemini-4-argon",
+      "analyzed_at": "2026-11-23"
+    }
+  ],
+  "in_progress": [
+    "hGS5XZlhaE0",
+    "u2MzP4BcKJ4",
+    "Fzme9R_jbiE",
+    "E_V5B7jpEcY"
+  ]
+}
