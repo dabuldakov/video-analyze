@@ -43,25 +43,19 @@ ffmpeg -y -i video.mp4 -vf "fps=1/10,scale=960:-1" -q:v 4 frames/f_%03d.jpg
 
 Кадр `f_NNN.jpg` = момент `NNN × 10` секунд.
 
-## Структура хранения
+## Хранение результатов
 
-Каждое разобранное видео — отдельная папка `analyses/<video-id>/`:
+Результаты (расшифровка, правила, report, meta) хранятся **в Postgres** — таблица
+`video_analyses` в trading-БД. Этот репозиторий содержит **только пайплайн**
+(скрипты скачивания/транскрипции/кадров). В git видео-артефакты не кладём.
 
+Чтобы не разбирать видео заново — обращаемся к БД:
+
+```sql
+select video_id, title, testable, rules, transcript from video_analyses;
 ```
-analyses/<video-id>/
-  meta.json        # url, title, модель, дата, длительность
-  transcript.txt   # расшифровка с таймкодами
-  REPORT.md        # разбор «речь ↔ график»
-  frames/          # кадры (f_NNN.jpg = NNN*10 сек)
-```
 
-Сырое видео (50 МБ) в git не кладём — лежит на сервере, путь в `meta.json`.
-
-### Разобранные видео
-
-| id | видео | модель | отчёт |
-|---|---|---|---|
-| `k8aylsnYAe8` | ТАЙМФРЕЙМЫ: Лучшая стратегия для дейтрейдинга | gemini-4-argon | [REPORT.md](analyses/k8aylsnYAe8/REPORT.md) |
+Дедуп по `video_id` (PK). Если `video_id` уже в БД — анализ не повторяется.
 
 ## Примечание
 
